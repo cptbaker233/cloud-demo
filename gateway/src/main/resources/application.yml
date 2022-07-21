@@ -12,10 +12,12 @@ spring:
           uri: lb://userservice    #lb = loadbalance负载均衡, 意思为userservice进行负载均衡
           predicates:   #路由断言, 也就是判断请求是否符合路由规则的条件
             - Path=/user/**    #路径匹配规则, 只要以/user/开头均路由到lb:userservice
-          filters:
-            - AddRequestHeader=truth,Itcast is freaking awesome
+#          filters:
+#            - AddRequestHeader=truth,Itcast is freaking awesome
         - id: order-service
           uri: lb://orderservice
           predicates:
             - Path=/order/**
-            - After=2037-01-20T17:42:47.789-07:00[America/Denver]
+            - After=1970-01-20T17:42:47.789-07:00[America/Denver]
+      default-filters:
+        - AddRequestHeader=truth,Itcast is freaking awesome
