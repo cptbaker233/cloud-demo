@@ -6,6 +6,6 @@ spring:
   cloud:
     nacos:
 #      server-addr: http://localhost:80    #集群Nacos地址
-      server-addr: http://nacos:8848    #单体Nacos地址
+      server-addr: nacos:8848    #单体Nacos地址
       config:
         file-extension: yml
